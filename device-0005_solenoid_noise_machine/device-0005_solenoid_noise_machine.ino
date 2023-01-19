@@ -1,5 +1,5 @@
 /*
-  Random Solenoid Noise Maker
+  Device-0005 / Solenoid Noise Machine
   ATtimy85
   
   ts5h / 0bjekt
