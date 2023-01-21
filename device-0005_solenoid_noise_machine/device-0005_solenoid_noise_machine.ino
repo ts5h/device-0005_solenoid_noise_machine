@@ -5,10 +5,10 @@
   ts5h / 0bjekt
  */
 
-const int unsigned LED = 3;
-const int unsigned SOLENOID = 4;
+const int unsigned SOLENOID = 3;
+const int unsigned LED = 4;
 
-const int unsigned DUR = 15;
+const int unsigned DUR = 10;
 
 int unsigned num;
 int unsigned randomDelay;
@@ -16,25 +16,24 @@ int unsigned randomDelay;
 void setup() {
   randomSeed(analogRead(1));
   
-  pinMode(LED, OUTPUT);
   pinMode(SOLENOID, OUTPUT);
+  pinMode(LED, OUTPUT);
 
-  digitalWrite(LED, HIGH);
   digitalWrite(SOLENOID, LOW);
-  delay(2000);
+  digitalWrite(LED, HIGH);
+  delay(1000);
 }
 
 void loop() {
-  num = random(10);
+  num = random(25);
   if (num == 0) {
-    // ~5s interval
-    randomDelay = random(7971);
-  } else if (num <= 2) {
-    // ~1s interval
-    randomDelay = random(1971);
+    randomDelay = random(8001 - DUR * 2);
+  } else if (num == 1) {
+    randomDelay = random(4001 - DUR * 2);
+  } else if (num <= 5) {
+    randomDelay = random(1001 - DUR * 2);
   } else {
-    // ~250ms interval
-    randomDelay = random(221);
+    randomDelay = random(251 - DUR * 2);
   }
   randomDelay += DUR;
   
