@@ -8,7 +8,7 @@
 const int unsigned SOLENOID = 3;
 const int unsigned LED = 4;
 
-const int unsigned DUR = 10;
+const int unsigned DUR = 20;
 const int unsigned OPERATING_TIME = DUR * 2;
 
 int unsigned num;
@@ -26,15 +26,17 @@ void setup() {
 }
 
 void loop() {
-  num = random(25);
+  num = random(100);
   if (num == 0) {
     randomDelay = random(8001 - OPERATING_TIME);
-  } else if (num == 1) {
-    randomDelay = random(4001 - OPERATING_TIME);
-  } else if (num <= 5) {
-    randomDelay = random(1001 - OPERATING_TIME);
+  } else if (num <= 2) {
+    randomDelay = random(2001 - OPERATING_TIME);
+  } else if (num <= 7) {
+    randomDelay = random(501 - OPERATING_TIME);
+  } else if (num <= 17) {
+    randomDelay = random(151 - OPERATING_TIME);
   } else {
-    randomDelay = random(251 - OPERATING_TIME);
+    randomDelay = random(51 - OPERATING_TIME);
   }
   randomDelay += DUR;
   
